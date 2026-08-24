@@ -13,31 +13,34 @@ header{padding:64px 24px 40px;text-align:center;}
 header h1{font-size:clamp(28px,5vw,54px);font-weight:700;}
 header h1 em{font-style:italic;color:#9ec8ff;}
 header p{margin-top:12px;color:#95a1b6;font-size:clamp(15px,2vw,19px);}
-.grid{width:100%;margin:0 auto;padding:0;display:grid;grid-template-columns:1fr;gap:64px;}
-.card{background:#0e1424;overflow:hidden;display:flex;flex-direction:column;}
+.grid{width:100%;display:grid;grid-template-columns:1fr;gap:64px;}
+.card{background:#0e1424;overflow:hidden;}
 .card a.img{display:block;background:#06080d;}
 .card img{width:100%;display:block;}
-.card .meta{padding:22px 28px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.card .meta{padding:22px 28px 26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;}
 .card .meta h2{font-size:30px;font-weight:600;line-height:1.3;}
-.card .meta a.dl{flex:none;font-size:17px;color:#9ec8ff;text-decoration:none;border:1.5px solid #2c3a5c;padding:10px 22px;border-radius:999px;}
-.card .meta a.dl:hover{background:#16203a;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;}
+a.dl{font-size:17px;color:#9ec8ff;text-decoration:none;border:1.5px solid #2c3a5c;padding:10px 22px;border-radius:999px;white-space:nowrap;}
+a.dl:hover{background:#16203a;}
 footer{text-align:center;padding:40px 20px 60px;color:#5c6880;font-size:14px;}
 </style>
 </head>
 <body>
 <header>
   <h1>Longevity Life Academy <em>Masterclass</em></h1>
-  <p>Final creative assets — Julie Gibson Clark</p>
+  <p>Final creative assets — every image in three download sizes, full original quality</p>
 </header>
 <div class="grid">
-  <div class="card"><a class="img" href="zoom-40-ppl-logos.jpg"><img src="zoom-40-ppl-logos.jpg" alt="Zoom 40 people with logos"></a><div class="meta"><h2>Zoom 40 People + Logos</h2><a class="dl" href="zoom-40-ppl-logos.jpg" download>Download</a></div></div>
-  <div class="card"><a class="img" href="zoom-meeting-ui-chat.jpg"><img src="zoom-meeting-ui-chat.jpg" alt="Zoom meeting UI with chat"></a><div class="meta"><h2>Zoom Meeting UI + Chat</h2><a class="dl" href="zoom-meeting-ui-chat.jpg" download>Download</a></div></div>
-  <div class="card"><a class="img" href="previous-mockups/phones-mockup-tilted-zoom-grid.png"><img src="previous-mockups/phones-mockup-tilted-zoom-grid.png" alt="Phones mockup tilted zoom grid"></a><div class="meta"><h2>Phones — Zoom Grid (Tilted)</h2><a class="dl" href="previous-mockups/phones-mockup-tilted-zoom-grid.png" download>Download</a></div></div>
-  <div class="card"><a class="img" href="previous-mockups/phones-mockup-upright-zoom-grid.png"><img src="previous-mockups/phones-mockup-upright-zoom-grid.png" alt="Phones mockup upright zoom grid"></a><div class="meta"><h2>Phones — Zoom Grid (Upright)</h2><a class="dl" href="previous-mockups/phones-mockup-upright-zoom-grid.png" download>Download</a></div></div>
-  <div class="card"><a class="img" href="previous-mockups/masterclass-fold-zoom-grid.png"><img src="previous-mockups/masterclass-fold-zoom-grid.png" alt="Masterclass fold zoom grid"></a><div class="meta"><h2>Fold — Zoom Grid</h2><a class="dl" href="previous-mockups/masterclass-fold-zoom-grid.png" download>Download</a></div></div>
-  <div class="card"><a class="img" href="previous-mockups/masterclass-fold-real-julie.png"><img src="previous-mockups/masterclass-fold-real-julie.png" alt="Masterclass fold with real Julie"></a><div class="meta"><h2>Fold — Real Julie + Logo</h2><a class="dl" href="previous-mockups/masterclass-fold-real-julie.png" download>Download</a></div></div>
-  <div class="card"><a class="img" href="originals-phones-mockup.jpg"><img src="originals-phones-mockup.jpg" alt="Original phones mockup"></a><div class="meta"><h2>Original Phones Mockup</h2><a class="dl" href="originals-phones-mockup.jpg" download>Download</a></div></div>
-  <div class="card"><a class="img" href="originals-fold-mockup.jpg"><img src="originals-fold-mockup.jpg" alt="Original fold mockup"></a><div class="meta"><h2>Original Fold Mockup</h2><a class="dl" href="originals-fold-mockup.jpg" download>Download</a></div></div>
+  <div class="card"><a class="img" href="phones-mockup-final.png"><img src="phones-mockup-final.png" alt="Phones Mockup"></a><div class="meta"><h2>Phones Mockup</h2><div class="btns"><a class="dl" href="phones-mockup-final.png" download>Full · 2048px</a><a class="dl" href="sizes/phones-mockup-final-1024.png" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="masterclass-fold-mockup-final.png"><img src="masterclass-fold-mockup-final.png" alt="Masterclass Fold Mockup"></a><div class="meta"><h2>Masterclass Fold Mockup</h2><div class="btns"><a class="dl" href="masterclass-fold-mockup-final.png" download>Full · 2752px</a><a class="dl" href="sizes/masterclass-fold-mockup-final-2048.png" download>2048px</a><a class="dl" href="sizes/masterclass-fold-mockup-final-1024.png" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="zoom-40-ppl-logos.jpg"><img src="zoom-40-ppl-logos.jpg" alt="Zoom 40 People + Logos"></a><div class="meta"><h2>Zoom 40 People + Logos</h2><div class="btns"><a class="dl" href="zoom-40-ppl-logos.jpg" download>Full · 1935px</a><a class="dl" href="sizes/zoom-40-ppl-logos-1024.jpg" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="zoom-meeting-ui-chat.jpg"><img src="zoom-meeting-ui-chat.jpg" alt="Zoom Meeting UI + Chat"></a><div class="meta"><h2>Zoom Meeting UI + Chat</h2><div class="btns"><a class="dl" href="zoom-meeting-ui-chat.jpg" download>Full · 1938px</a><a class="dl" href="sizes/zoom-meeting-ui-chat-1024.jpg" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="previous-mockups/phones-mockup-tilted-zoom-grid.png"><img src="previous-mockups/phones-mockup-tilted-zoom-grid.png" alt="Phones — Zoom Grid (Tilted)"></a><div class="meta"><h2>Phones — Zoom Grid (Tilted)</h2><div class="btns"><a class="dl" href="previous-mockups/phones-mockup-tilted-zoom-grid.png" download>Full · 2048px</a><a class="dl" href="sizes/phones-mockup-tilted-zoom-grid-1024.png" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="previous-mockups/phones-mockup-upright-zoom-grid.png"><img src="previous-mockups/phones-mockup-upright-zoom-grid.png" alt="Phones — Zoom Grid (Upright)"></a><div class="meta"><h2>Phones — Zoom Grid (Upright)</h2><div class="btns"><a class="dl" href="previous-mockups/phones-mockup-upright-zoom-grid.png" download>Full · 2048px</a><a class="dl" href="sizes/phones-mockup-upright-zoom-grid-1024.png" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="previous-mockups/masterclass-fold-zoom-grid.png"><img src="previous-mockups/masterclass-fold-zoom-grid.png" alt="Fold — Zoom Grid"></a><div class="meta"><h2>Fold — Zoom Grid</h2><div class="btns"><a class="dl" href="previous-mockups/masterclass-fold-zoom-grid.png" download>Full · 2752px</a><a class="dl" href="sizes/masterclass-fold-zoom-grid-2048.png" download>2048px</a><a class="dl" href="sizes/masterclass-fold-zoom-grid-1024.png" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="previous-mockups/masterclass-fold-real-julie.png"><img src="previous-mockups/masterclass-fold-real-julie.png" alt="Fold — Real Julie + Logo"></a><div class="meta"><h2>Fold — Real Julie + Logo</h2><div class="btns"><a class="dl" href="previous-mockups/masterclass-fold-real-julie.png" download>Full · 2752px</a><a class="dl" href="sizes/masterclass-fold-real-julie-2048.png" download>2048px</a><a class="dl" href="sizes/masterclass-fold-real-julie-1024.png" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="originals-phones-mockup.jpg"><img src="originals-phones-mockup.jpg" alt="Original Phones Mockup"></a><div class="meta"><h2>Original Phones Mockup</h2><div class="btns"><a class="dl" href="originals-phones-mockup.jpg" download>Full · 1080px</a><a class="dl" href="sizes/originals-phones-mockup-1024.jpg" download>1024px</a></div></div></div>
+  <div class="card"><a class="img" href="originals-fold-mockup.jpg"><img src="originals-fold-mockup.jpg" alt="Original Fold Mockup"></a><div class="meta"><h2>Original Fold Mockup</h2><div class="btns"><a class="dl" href="originals-fold-mockup.jpg" download>Full · 1747px</a><a class="dl" href="sizes/originals-fold-mockup-1024.jpg" download>1024px</a></div></div></div>
 </div>
 <footer>Longevity Life Academy · by eTeacher Group</footer>
 </body>
