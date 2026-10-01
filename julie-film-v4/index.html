@@ -91,7 +91,7 @@ footer{margin-top:80px;color:var(--mute);font-size:13px}
   <aside class="glass">
     <div class="eyebrow">Master</div>
     <h3>Full film · 2:17</h3>
-    <p class="sub">Masterclass edit v4 — press collage from the site's approved press cards, Julie-only faculty card, offer panel with both dates and prices, end card with dates, URL and the labelled Trustpilot rating.</p>
+    <p class="sub">Masterclass edit v4 — press collage from the site\'s approved press cards, Julie-only faculty card, offer panel with both dates and prices, end card with dates, URL and the labelled Trustpilot rating.</p>
     <div class="btns">
       <a class="btn primary" href="../video/julie-masterclass-film-full-1080p-masterclass-edit.mp4" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>Download MP4 · 1080p</a>
       <a class="btn ghost" href="#" onclick="document.getElementById('master').play();document.getElementById('master').scrollIntoView({behavior:'smooth',block:'center'});return false">Stream</a>
@@ -172,10 +172,10 @@ const AUDIT=[
  ['P1','Generic 9-person Zoom grid (1:33)','Replaced with the LLA-branded Zoom class (Julie as host), no mirroring, readable name tiles.','ok'],
  ['P1','Kinetic captions unreadable (0:24–0:30)','Navy words recoloured to ice blue via a hue mask; "RUNS OUT", "TANK", "EMPTIES" now read on the dark wood.','ok'],
  ['P1','4 s dead air at the end (2:08–2:11)','Logo swirl and eTeacher card trimmed to 1.0 s and 1.2 s; 2.37 s removed with an audio crossfade.','ok'],
- ['P1','Light burst over Julie's face (1:52)','Blown-out frames replaced with a motion-compensated blend of the clean neighbours; the glow stays, her face stays visible.','ok'],
+ ['P1','Light burst over Julie\'s face (1:52)','Blown-out frames replaced with a motion-compensated blend of the clean neighbours; the glow stays, her face stays visible.','ok'],
  ['P1','Loudness −18 LUFS','Master mix unchanged (−18). Every cutdown on this page is delivered at −14 LUFS integrated, true peak ≤ −1.3 dBTP (measured with ebur128 after encoding).','ok'],
  ['P1','"33.5%" vs site "34%"','Kept 33.5% (exact from 0.665). Site rounds; site is frozen under GOLDEN CAPI and was not touched.','dec'],
- ['P1','Spoken lines mentioning course / 18 lessons / pillars','Transcript checked (faster-whisper): none remain. "You need a curriculum that makes longevity automatic" is Julie's own line and stays.','dec'],
+ ['P1','Spoken lines mentioning course / 18 lessons / pillars','Transcript checked (faster-whisper): none remain. "You need a curriculum that makes longevity automatic" is Julie\'s own line and stays.','dec'],
 ];
 document.getElementById('audit').innerHTML=AUDIT.map(([p,t,d,s])=>`<div class="fix"><span class="st ${s}">${s==='ok'?'Fixed':'Decision'} · ${p}</span><b>${t}</b>${d}</div>`).join('');
 // subtle 3D tilt on the hero player (pointer only, reduced-motion safe)
