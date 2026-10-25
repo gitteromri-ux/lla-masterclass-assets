@@ -1,0 +1,62 @@
+[
+  {
+    "key": "zoom-blue",
+    "title": "Zoom Blue \u2014 age 33% slower (15s)",
+    "format": "feed",
+    "url": "media/zoom-blue-feed.mp4",
+    "width": 1080,
+    "height": 1350,
+    "bytes": 2443824,
+    "type": "mp4"
+  },
+  {
+    "key": "zoom-blue",
+    "title": "Zoom Blue \u2014 age 33% slower (15s)",
+    "format": "vertical",
+    "url": "media/zoom-blue-vertical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "bytes": 3734106,
+    "type": "mp4"
+  },
+  {
+    "key": "julie-cards",
+    "title": "Julie \u2014 masterclass cards (56s)",
+    "format": "feed",
+    "url": "media/julie-cards-feed.mp4",
+    "width": 1080,
+    "height": 1350,
+    "bytes": 12504888,
+    "type": "mp4"
+  },
+  {
+    "key": "julie-cards",
+    "title": "Julie \u2014 masterclass cards (56s)",
+    "format": "vertical",
+    "url": "media/julie-cards-vertical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "bytes": 19977068,
+    "type": "mp4"
+  },
+  {
+    "key": "zoom-static",
+    "title": "Julie on Zoom \u2014 class still",
+    "format": "feed",
+    "url": "media/zoom-static-feed.jpg",
+    "width": 1080,
+    "height": 1350,
+    "bytes": 211515,
+    "type": "jpg"
+  },
+  {
+    "key": "zoom-static",
+    "title": "Julie on Zoom \u2014 class still",
+    "format": "vertical",
+    "url": "media/zoom-static-vertical.jpg",
+    "width": 1080,
+    "height": 1920,
+    "bytes": 218491,
+    "type": "jpg"
+  }
+]
