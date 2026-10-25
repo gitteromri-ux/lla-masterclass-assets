@@ -1,12 +1,72 @@
 [
   {
+    "key": "julie-film",
+    "title": "Julie \u2014 full film, masterclass edit (2:18)",
+    "format": "wide",
+    "url": "media/julie-film-wide.mp4",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 49139916,
+    "type": "mp4"
+  },
+  {
+    "key": "julie-film",
+    "title": "Julie \u2014 full film, masterclass edit (2:18)",
+    "format": "feed",
+    "url": "media/julie-film-feed.mp4",
+    "width": 1080,
+    "height": 1350,
+    "bytes": 25661241,
+    "type": "mp4"
+  },
+  {
+    "key": "julie-film",
+    "title": "Julie \u2014 full film, masterclass edit (2:18)",
+    "format": "square",
+    "url": "media/julie-film-square.mp4",
+    "width": 1080,
+    "height": 1080,
+    "bytes": 23141560,
+    "type": "mp4"
+  },
+  {
+    "key": "julie-film",
+    "title": "Julie \u2014 full film, masterclass edit (2:18)",
+    "format": "vertical",
+    "url": "media/julie-film-vertical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "bytes": 31315926,
+    "type": "mp4"
+  },
+  {
+    "key": "zoom-blue",
+    "title": "Zoom Blue \u2014 age 33% slower (15s)",
+    "format": "wide",
+    "url": "media/zoom-blue-wide.mp4",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 2367874,
+    "type": "mp4"
+  },
+  {
     "key": "zoom-blue",
     "title": "Zoom Blue \u2014 age 33% slower (15s)",
     "format": "feed",
     "url": "media/zoom-blue-feed.mp4",
     "width": 1080,
     "height": 1350,
-    "bytes": 2443824,
+    "bytes": 2241672,
+    "type": "mp4"
+  },
+  {
+    "key": "zoom-blue",
+    "title": "Zoom Blue \u2014 age 33% slower (15s)",
+    "format": "square",
+    "url": "media/zoom-blue-square.mp4",
+    "width": 1080,
+    "height": 1080,
+    "bytes": 1877223,
     "type": "mp4"
   },
   {
@@ -16,28 +76,18 @@
     "url": "media/zoom-blue-vertical.mp4",
     "width": 1080,
     "height": 1920,
-    "bytes": 3734106,
+    "bytes": 3298455,
     "type": "mp4"
   },
   {
-    "key": "julie-cards",
-    "title": "Julie \u2014 masterclass cards (75s cut)",
-    "format": "feed",
-    "url": "media/julie-cards-feed.mp4",
-    "width": 1080,
-    "height": 1350,
-    "bytes": 23693560,
-    "type": "mp4"
-  },
-  {
-    "key": "julie-cards",
-    "title": "Julie \u2014 masterclass cards (75s cut)",
-    "format": "vertical",
-    "url": "media/julie-cards-vertical.mp4",
-    "width": 1080,
-    "height": 1920,
-    "bytes": 34372562,
-    "type": "mp4"
+    "key": "zoom-static",
+    "title": "Julie on Zoom \u2014 class still",
+    "format": "wide",
+    "url": "media/zoom-static-wide.jpg",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 431559,
+    "type": "jpg"
   },
   {
     "key": "zoom-static",
@@ -46,7 +96,17 @@
     "url": "media/zoom-static-feed.jpg",
     "width": 1080,
     "height": 1350,
-    "bytes": 211515,
+    "bytes": 232711,
+    "type": "jpg"
+  },
+  {
+    "key": "zoom-static",
+    "title": "Julie on Zoom \u2014 class still",
+    "format": "square",
+    "url": "media/zoom-static-square.jpg",
+    "width": 1080,
+    "height": 1080,
+    "bytes": 221792,
     "type": "jpg"
   },
   {
@@ -56,7 +116,7 @@
     "url": "media/zoom-static-vertical.jpg",
     "width": 1080,
     "height": 1920,
-    "bytes": 218491,
+    "bytes": 256498,
     "type": "jpg"
   }
 ]
