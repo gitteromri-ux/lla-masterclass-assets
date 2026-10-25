@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julie · your masterclass post</title>
+<style>
+body{margin:0;background:#f4f1eb;color:#173b38;font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1040px;margin:auto;padding:28px 20px 80px}
+h1{font-size:40px;line-height:1.12;margin:0 0 6px}h2{font-size:26px;margin:0 0 10px}h3{font-size:20px;margin:0 0 6px}
+.sub{font-size:19px;color:#4b6966;margin:0 0 22px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 22px}
+.step{background:#173b38;color:#fff;padding:14px 16px;border-radius:14px;font-size:16px}.step b{display:block;font-size:22px;margin-bottom:2px}
+article,section{background:#fff;padding:26px;border-radius:18px;margin:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+nav{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+label{display:block;font-size:14px;color:#4b6966;margin-bottom:4px}
+select{width:100%;padding:13px 14px;border-radius:10px;border:1.5px solid #9fb9b5;font:inherit;font-size:17px;background:#fff;color:#173b38}
+button,.download{padding:13px 20px;border-radius:10px;border:1.5px solid #176358;color:#fff;background:#176358;font:inherit;font-size:17px;font-weight:600;cursor:pointer}
+button.secondary{background:#fff;color:#176358}
+.download{display:inline-block;text-decoration:none;margin:10px 0 0}
+pre{white-space:pre-wrap;font:inherit;background:#f7f5f0;border:1px solid #e3ded4;border-radius:12px;padding:18px;margin:14px 0}
+video,img.preview{width:100%;max-height:640px;object-fit:contain;background:#102f32;border-radius:12px;display:block}
+a{color:#075e56}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.meta{font-size:15px;color:#4b6966}
+.guide{background:#eef6f4;border-left:4px solid #176358;padding:12px 16px;border-radius:0 12px 12px 0;margin:14px 0;font-size:16px}
+.assets{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.asset{border:1px solid #e3ded4;border-radius:14px;padding:14px}
+.tags a{display:inline-block;margin:6px 12px 6px 0;font-weight:600}
+@media(max-width:820px){.assets,nav,.steps{grid-template-columns:1fr}h1{font-size:32px}}
+</style></head><body><main>
+<h1>Julie, your masterclass post</h1>
+<p class="sub">The Longevity Masterclass · October 27, 7 PM ET or November 14, 1 PM ET · Live on Zoom</p>
+<div class="steps"><div class="step"><b>1</b>Copy the post</div><div class="step"><b>2</b>Pick one attachment and download it</div><div class="step"><b>3</b>Publish on LinkedIn with the link kept inside the post</div></div>
+<article>
+<h2>Your post, as approved</h2>
+<p class="meta" id="count"></p>
+<pre id="caption">I&#x27;m honored, and a little humbled, to be doing this.
+
+When I joined Longevity Life Academy, one idea lit me up: longevity shouldn&#x27;t belong only to people with private labs and unlimited budgets. It should belong to everyone. To the parent juggling work and kids. To the person who&#x27;s tired of feeling tired. To everyday Americans, and to people everywhere.
+
+That&#x27;s why I&#x27;m delighted to invite you to join me live on Zoom for the Longevity Life Academy masterclass.
+
+I&#x27;ll open my notebook for you: what I measured, what I changed, what actually moved the needle, and what didn&#x27;t. Sleep, food, movement, stress. Real habits, from a real, busy life.
+
+Here&#x27;s what I believe. We all want to feel strong. We all want energy for the things that matter. And we all want to be here, fully here, for the people we love.
+
+The science already exists. The barrier is turning it into something you can actually live with on a Tuesday night, after a long day.
+
+It doesn&#x27;t have to be that hard.
+
+Come join me. Take what I&#x27;ve learned, the wins and the mistakes, and make it yours.
+
+Tuesday, October 27, 7:00 PM ET, or Saturday, November 14, 1:00 PM ET.
+
+Save your seat:
+https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=linkedin&amp;utm_medium=organic_social&amp;utm_campaign=julie_masterclass&amp;utm_content=faculty_post
+
+#Longevity #HealthyAging #LongevityLifeAcademy</pre>
+<div class="row"><button id="copy">Copy the post</button><button class="secondary" id="copylink">Copy registration link</button><a id="registration" class="download" style="margin:0" href="https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=linkedin&utm_medium=organic_social&utm_campaign=julie_masterclass&utm_content=faculty_post" target="_blank" rel="noopener">Open registration page</a></div>
+<div class="guide">LinkedIn: keep the registration link inside the post exactly as copied, and do not repeat it in a comment. Tag Longevity Life Academy and eTeacher Group when you post.</div>
+</article>
+<section><h2>Choose one attachment</h2>
+<nav style="grid-template-columns:1fr;max-width:360px;margin-bottom:14px"><div><label for="placement">Size</label><select id="placement"><option value="wide" selected>Landscape 1920 × 1080, LinkedIn feed</option><option value="feed">Portrait 1080 × 1350</option><option value="square">Square 1080 × 1080</option><option value="vertical">Vertical 1080 × 1920, Stories and Reels</option></select></div></nav>
+<p class="meta">Three options. Videos autoplay muted; tap Enable sound to listen. Downloads are MP4 or JPG files.</p>
+<div id="assets" class="assets"></div></section>
+</main>
+<script>
+const assets=[{"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "wide", "url": "media/julie-film-wide.mp4", "width": 1920, "height": 1080, "bytes": 46244840, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "feed", "url": "media/julie-film-feed.mp4", "width": 1080, "height": 1350, "bytes": 25689932, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "square", "url": "media/julie-film-square.mp4", "width": 1080, "height": 1080, "bytes": 22834535, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "vertical", "url": "media/julie-film-vertical.mp4", "width": 1080, "height": 1920, "bytes": 31981952, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "wide", "url": "media/zoom-blue-wide.mp4", "width": 1920, "height": 1080, "bytes": 2367874, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "feed", "url": "media/zoom-blue-feed.mp4", "width": 1080, "height": 1350, "bytes": 2241672, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "square", "url": "media/zoom-blue-square.mp4", "width": 1080, "height": 1080, "bytes": 1877223, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "vertical", "url": "media/zoom-blue-vertical.mp4", "width": 1080, "height": 1920, "bytes": 3298455, "type": "mp4"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "wide", "url": "media/zoom-static-wide.jpg", "width": 1920, "height": 1080, "bytes": 431559, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "feed", "url": "media/zoom-static-feed.jpg", "width": 1080, "height": 1350, "bytes": 232711, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "square", "url": "media/zoom-static-square.jpg", "width": 1080, "height": 1080, "bytes": 221792, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "vertical", "url": "media/zoom-static-vertical.jpg", "width": 1080, "height": 1920, "bytes": 256498, "type": "jpg"}];
+const caption="I'm honored, and a little humbled, to be doing this.\n\nWhen I joined Longevity Life Academy, one idea lit me up: longevity shouldn't belong only to people with private labs and unlimited budgets. It should belong to everyone. To the parent juggling work and kids. To the person who's tired of feeling tired. To everyday Americans, and to people everywhere.\n\nThat's why I'm delighted to invite you to join me live on Zoom for the Longevity Life Academy masterclass.\n\nI'll open my notebook for you: what I measured, what I changed, what actually moved the needle, and what didn't. Sleep, food, movement, stress. Real habits, from a real, busy life.\n\nHere's what I believe. We all want to feel strong. We all want energy for the things that matter. And we all want to be here, fully here, for the people we love.\n\nThe science already exists. The barrier is turning it into something you can actually live with on a Tuesday night, after a long day.\n\nIt doesn't have to be that hard.\n\nCome join me. Take what I've learned, the wins and the mistakes, and make it yours.\n\nTuesday, October 27, 7:00 PM ET, or Saturday, November 14, 1:00 PM ET.\n\nSave your seat:\nhttps://www.longevitylifeacademy.com/julie-masterclass/?utm_source=linkedin&utm_medium=organic_social&utm_campaign=julie_masterclass&utm_content=faculty_post\n\n#Longevity #HealthyAging #LongevityLifeAcademy";const url="https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=linkedin&utm_medium=organic_social&utm_campaign=julie_masterclass&utm_content=faculty_post";
+const $=id=>document.getElementById(id);
+$('count').textContent=caption.length+' characters · within the LinkedIn limit';
+async function copy(t,b){try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.append(a);a.select();document.execCommand('copy');a.remove()}const old=b.textContent;b.textContent='Copied';setTimeout(()=>b.textContent=old,1400)}
+function render(){$('assets').replaceChildren(...assets.filter(a=>a.format===$('placement').value).map(a=>{let d=document.createElement('div');d.className='asset';let h=document.createElement('h3');h.textContent=a.title;d.append(h);
+let m=document.createElement(a.type==='mp4'?'video':'img');m.src='../'+a.url;
+if(a.type==='mp4'){m.autoplay=true;m.muted=true;m.defaultMuted=true;m.loop=true;m.playsInline=true;m.controls=true;m.preload='metadata';m.setAttribute('muted','');m.setAttribute('playsinline','');
+let b=document.createElement('button');b.className='secondary snd';b.style.marginTop='10px';b.textContent='Enable sound';b.onclick=()=>{document.querySelectorAll('video').forEach(v=>{if(v!==m)v.muted=true});document.querySelectorAll('button.snd').forEach(x=>x.textContent='Enable sound');m.muted=!m.muted;b.textContent=m.muted?'Enable sound':'Mute';m.play().catch(()=>{})};d.append(m,b)}
+else{m.className='preview';m.alt='Julie teaching a live Zoom class';d.append(m)}
+let info=document.createElement('div');info.className='meta';info.style.marginTop='8px';info.textContent=a.width+' × '+a.height+' · '+a.type.toUpperCase()+' · '+(a.bytes/1048576).toFixed(1)+' MB';
+let link=document.createElement('a');link.className='download';link.href='../'+a.url;link.download=a.url.split('/').pop();link.textContent='Download';d.append(info,link);return d}))}
+$('placement').onchange=render;$('copy').onclick=e=>copy(caption,e.target);$('copylink').onclick=e=>copy(url,e.target);render();
+</script></body></html>
