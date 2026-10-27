@@ -4,7 +4,7 @@ body{margin:0;background:#f4f1eb;color:#173b38;font:18px/1.6 system-ui,-apple-sy
 main{max-width:1040px;margin:auto;padding:28px 20px 80px}
 h1{font-size:44px;line-height:1.1;margin:0 0 8px}h2{font-size:28px;margin:0 0 10px}h3{font-size:21px;margin:0 0 6px}
 .sub{font-size:20px;color:#4b6966;margin:0 0 22px}
-.tabs{display:flex;gap:10px;margin:0 0 20px}
+.tabs{display:flex;gap:10px;margin:0 0 14px}.when .tab{font-size:17px;padding:12px;border-color:#9fb9b5;color:#173b38}.when .tab.on{background:#173b38;border-color:#173b38;color:#fff}
 .tab{flex:1;padding:18px;border-radius:14px;border:2px solid #176358;background:#fff;color:#176358;font:inherit;font-size:22px;font-weight:700;cursor:pointer}
 .tab.on{background:#176358;color:#fff}
 article,section{background:#fff;padding:26px;border-radius:18px;margin:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
@@ -27,6 +27,7 @@ a{color:#075e56}
 <h1>Longevity Life Academy<br>Official invite · Facebook and Instagram</h1>
 <p class="sub">The Longevity Masterclass Event of the Year · Tonight, October 27, 7:00 PM ET, and Saturday, November 14, 1:00 PM ET · Live on Zoom</p>
 <div class="tabs"><button class="tab on" data-p="facebook">Facebook</button><button class="tab" data-p="instagram">Instagram</button></div>
+<div class="tabs when"><button class="tab on" data-w="today">Posting today, before 7:00 PM ET</button><button class="tab" data-w="later">Posting after tonight (November 14 only)</button></div>
 <article>
 <h2 id="title"></h2><div class="meta" id="count"></div>
 <div class="row"><button id="copy">Copy post</button><button id="copylink" class="secondary">Copy registration link</button></div>
@@ -37,15 +38,117 @@ a{color:#075e56}
 <section><h2>Attachments · the three approved assets</h2><p class="meta" id="sizenote"></p><div id="assets" class="assets"></div></section>
 </main>
 <script>
-const posts=[{"platform": "facebook", "caption": "Longevity Life Academy is delighted to invite you to The Longevity Masterclass Event of the Year.\n\nTonight, Tuesday, October 27, at 7:00 PM ET, live on Zoom. Reserve your seat: https://www.longevitylifeacademy.com/julie-masterclass\nSecond session: Saturday, November 14, at 1:00 PM ET.\n\nLongevity Life Academy, eTeacher Group's school for healthy aging, was built on one conviction: longevity expertise should not belong only to those who can spend millions. It should be accessible to everyday Americans. That is why we bring the world's leading longevity instructors into live classes and help every student build a personalized protocol for a longer, better life.\n\nTonight we open our doors for a rare and unique opportunity.\n\nJulie Gibson Clark, our Founding Faculty member and the world's second slowest ager, ranked ahead of Bryan Johnson on the Rejuvenation Olympics leaderboard, reveals her real protocol, live. A single mom and recruiter from Phoenix. No private lab. No team of doctors. No millions. She ages eight months for every year, verified by epigenetic testing.\n\nIn 60 minutes with Julie you will learn:\n• How biological aging is measured, and what truly moves it\n• Her exact rules for food, sleep and movement, in numbers\n• Her full daily schedule, 5:00 am to 9:00 pm\n• Her four-item supplement stack, about $100 a month\n• Which longevity habits are worth your money, and which are not\n\nStandard seat: $49. The full 60-minute live masterclass.\nVIP seat: $79. Adds a private 30-minute Q&A with Julie.\n\nChoose your date at checkout. Live seats are limited. 14-day full refund.\n\nReserve your seat now: https://www.longevitylifeacademy.com/julie-masterclass\n\nLongevity Life Academy by eTeacher Group. Longevity, for everyone.", "characters": 1740, "limit": 63206, "url": "https://www.longevitylifeacademy.com/julie-masterclass"}, {"platform": "instagram", "caption": "Tonight at 7:00 PM ET, live on Zoom. Longevity Life Academy is delighted to invite you to The Longevity Masterclass Event of the Year. Seats: link in bio.\n\nTonight, Tuesday, October 27, at 7:00 PM ET, live on Zoom.\nSecond session: Saturday, November 14, at 1:00 PM ET.\n\nLongevity Life Academy, eTeacher Group's school for healthy aging, was built on one conviction: longevity expertise should not belong only to those who can spend millions. It should be accessible to everyday Americans. That is why we bring the world's leading longevity instructors into live classes and help every student build a personalized protocol for a longer, better life.\n\nTonight we open our doors for a rare and unique opportunity.\n\nJulie Gibson Clark, our Founding Faculty member and the world's second slowest ager, ranked ahead of Bryan Johnson on the Rejuvenation Olympics leaderboard, reveals her real protocol, live. A single mom and recruiter from Phoenix. No private lab. No team of doctors. No millions. She ages eight months for every year, verified by epigenetic testing.\n\nIn 60 minutes with Julie you will learn:\n• How biological aging is measured, and what truly moves it\n• Her exact rules for food, sleep and movement, in numbers\n• Her full daily schedule, 5:00 am to 9:00 pm\n• Her four-item supplement stack, about $100 a month\n• Which longevity habits are worth your money, and which are not\n\nStandard seat: $49. The full 60-minute live masterclass.\nVIP seat: $79. Adds a private 30-minute Q&A with Julie.\n\nChoose your date at checkout. Live seats are limited. 14-day full refund.\n\nReserve your seat now: tap the link in our bio, or type longevitylifeacademy.com/julie-masterclass\n\nLongevity Life Academy by eTeacher Group. Longevity, for everyone.\n\n#LongevityLifeAcademy #JulieGibsonClark #LongevityMasterclass #Longevity #HealthyAging", "characters": 1832, "limit": 2200, "url": "https://www.longevitylifeacademy.com/julie-masterclass"}];const assets=[{"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "wide", "url": "../media/julie-film-wide.mp4", "width": 1920, "height": 1080, "bytes": 46244840, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "feed", "url": "../media/julie-film-feed.mp4", "width": 1080, "height": 1350, "bytes": 25689932, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "square", "url": "../media/julie-film-square.mp4", "width": 1080, "height": 1080, "bytes": 22834535, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "vertical", "url": "../media/julie-film-vertical.mp4", "width": 1080, "height": 1920, "bytes": 31981952, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "wide", "url": "../media/zoom-blue-wide.mp4", "width": 1920, "height": 1080, "bytes": 2367874, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "feed", "url": "../media/zoom-blue-feed.mp4", "width": 1080, "height": 1350, "bytes": 2241672, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "square", "url": "../media/zoom-blue-square.mp4", "width": 1080, "height": 1080, "bytes": 1877223, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "vertical", "url": "../media/zoom-blue-vertical.mp4", "width": 1080, "height": 1920, "bytes": 3298455, "type": "mp4"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "wide", "url": "../media/zoom-static-wide.jpg", "width": 1920, "height": 1080, "bytes": 431559, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "feed", "url": "../media/zoom-static-feed.jpg", "width": 1080, "height": 1350, "bytes": 232711, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "square", "url": "../media/zoom-static-square.jpg", "width": 1080, "height": 1080, "bytes": 221792, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "vertical", "url": "../media/zoom-static-vertical.jpg", "width": 1080, "height": 1920, "bytes": 256498, "type": "jpg"}];const $=id=>document.getElementById(id);let platform='facebook';
+const posts=[{"platform": "facebook", "caption": "Longevity Life Academy is delighted to invite you to The Longevity Masterclass Event of the Year.
+
+Tonight, Tuesday, October 27, at 7:00 PM ET, live on Zoom. Reserve your seat: https://www.longevitylifeacademy.com/julie-masterclass
+Second session: Saturday, November 14, at 1:00 PM ET.
+
+Longevity Life Academy, eTeacher Group's school for healthy aging, was built on one conviction: longevity expertise should not belong only to those who can spend millions. It should be accessible to everyday Americans. That is why we bring the world's leading longevity instructors into live classes and help every student build a personalized protocol for a longer, better life.
+
+Tonight we open our doors for a rare and unique opportunity.
+
+Julie Gibson Clark, our Founding Faculty member and the world's second slowest ager, reveals her real protocol, live. A single mom and recruiter from Phoenix. No private lab. No team of doctors. No millions. She ages 6.5 years per decade, verified by epigenetic testing.
+
+In 60 minutes with Julie you will learn:
+• How biological aging is measured, and what truly moves it
+• Her exact rules for food, sleep and movement, in numbers
+• Her full daily schedule, 5:00 am to 9:00 pm
+• Her four-item supplement stack, about $100 a month
+• Which longevity habits are worth your money, and which are not
+
+Standard seat: $49. The full 60-minute live masterclass.
+VIP seat: $79. Adds a private 30-minute Q&A with Julie.
+
+Choose your date at checkout. Live seats are limited. 14-day full refund.
+
+Reserve your seat now: https://www.longevitylifeacademy.com/julie-masterclass
+
+Longevity Life Academy by eTeacher Group. Longevity, for everyone.", "characters": 1661, "limit": 63206, "url": "https://www.longevitylifeacademy.com/julie-masterclass", "when": "today"}, {"platform": "facebook", "caption": "Longevity Life Academy is delighted to invite you to The Longevity Masterclass Event of the Year.
+
+Saturday, November 14, at 1:00 PM ET, live on Zoom. Reserve your seat: https://www.longevitylifeacademy.com/julie-masterclass
+
+Longevity Life Academy, eTeacher Group's school for healthy aging, was built on one conviction: longevity expertise should not belong only to those who can spend millions. It should be accessible to everyday Americans. That is why we bring the world's leading longevity instructors into live classes and help every student build a personalized protocol for a longer, better life.
+
+On November 14 we open our doors for a rare and unique opportunity.
+
+Julie Gibson Clark, our Founding Faculty member and the world's second slowest ager, reveals her real protocol, live. A single mom and recruiter from Phoenix. No private lab. No team of doctors. No millions. She ages 6.5 years per decade, verified by epigenetic testing.
+
+In 60 minutes with Julie you will learn:
+• How biological aging is measured, and what truly moves it
+• Her exact rules for food, sleep and movement, in numbers
+• Her full daily schedule, 5:00 am to 9:00 pm
+• Her four-item supplement stack, about $100 a month
+• Which longevity habits are worth your money, and which are not
+
+Standard seat: $49. The full 60-minute live masterclass.
+VIP seat: $79. Adds a private 30-minute Q&A with Julie.
+
+Choose your date at checkout. Live seats are limited. 14-day full refund.
+
+Reserve your seat now: https://www.longevitylifeacademy.com/julie-masterclass
+
+Longevity Life Academy by eTeacher Group. Longevity, for everyone.", "characters": 1607, "limit": 63206, "url": "https://www.longevitylifeacademy.com/julie-masterclass", "when": "later"}, {"platform": "instagram", "caption": "Tonight at 7:00 PM ET, live on Zoom. Longevity Life Academy is delighted to invite you to The Longevity Masterclass Event of the Year. Seats: link in bio.
+
+Tonight, Tuesday, October 27, at 7:00 PM ET, live on Zoom.
+Second session: Saturday, November 14, at 1:00 PM ET.
+
+Longevity Life Academy, eTeacher Group's school for healthy aging, was built on one conviction: longevity expertise should not belong only to those who can spend millions. It should be accessible to everyday Americans. That is why we bring the world's leading longevity instructors into live classes and help every student build a personalized protocol for a longer, better life.
+
+Tonight we open our doors for a rare and unique opportunity.
+
+Julie Gibson Clark, our Founding Faculty member and the world's second slowest ager, reveals her real protocol, live. A single mom and recruiter from Phoenix. No private lab. No team of doctors. No millions. She ages 6.5 years per decade, verified by epigenetic testing.
+
+In 60 minutes with Julie you will learn:
+• How biological aging is measured, and what truly moves it
+• Her exact rules for food, sleep and movement, in numbers
+• Her full daily schedule, 5:00 am to 9:00 pm
+• Her four-item supplement stack, about $100 a month
+• Which longevity habits are worth your money, and which are not
+
+Standard seat: $49. The full 60-minute live masterclass.
+VIP seat: $79. Adds a private 30-minute Q&A with Julie.
+
+Choose your date at checkout. Live seats are limited. 14-day full refund.
+
+Reserve your seat now: tap the link in our bio, or type longevitylifeacademy.com/julie-masterclass
+
+Longevity Life Academy by eTeacher Group. Longevity, for everyone.
+
+#LongevityLifeAcademy #JulieGibsonClark #LongevityMasterclass #Longevity #HealthyAging", "characters": 1753, "limit": 2200, "url": "https://www.longevitylifeacademy.com/julie-masterclass", "when": "today"}, {"platform": "instagram", "caption": "Saturday, November 14 at 1:00 PM ET, live on Zoom. Longevity Life Academy is delighted to invite you to The Longevity Masterclass Event of the Year. Seats: link in bio.
+
+Saturday, November 14, at 1:00 PM ET, live on Zoom.
+
+Longevity Life Academy, eTeacher Group's school for healthy aging, was built on one conviction: longevity expertise should not belong only to those who can spend millions. It should be accessible to everyday Americans. That is why we bring the world's leading longevity instructors into live classes and help every student build a personalized protocol for a longer, better life.
+
+On November 14 we open our doors for a rare and unique opportunity.
+
+Julie Gibson Clark, our Founding Faculty member and the world's second slowest ager, reveals her real protocol, live. A single mom and recruiter from Phoenix. No private lab. No team of doctors. No millions. She ages 6.5 years per decade, verified by epigenetic testing.
+
+In 60 minutes with Julie you will learn:
+• How biological aging is measured, and what truly moves it
+• Her exact rules for food, sleep and movement, in numbers
+• Her full daily schedule, 5:00 am to 9:00 pm
+• Her four-item supplement stack, about $100 a month
+• Which longevity habits are worth your money, and which are not
+
+Standard seat: $49. The full 60-minute live masterclass.
+VIP seat: $79. Adds a private 30-minute Q&A with Julie.
+
+Choose your date at checkout. Live seats are limited. 14-day full refund.
+
+Reserve your seat now: tap the link in our bio, or type longevitylifeacademy.com/julie-masterclass
+
+Longevity Life Academy by eTeacher Group. Longevity, for everyone.
+
+#LongevityLifeAcademy #JulieGibsonClark #LongevityMasterclass #Longevity #HealthyAging", "characters": 1713, "limit": 2200, "url": "https://www.longevitylifeacademy.com/julie-masterclass", "when": "later"}];const assets=[{"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "wide", "url": "../media/julie-film-wide.mp4", "width": 1920, "height": 1080, "bytes": 46244840, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "feed", "url": "../media/julie-film-feed.mp4", "width": 1080, "height": 1350, "bytes": 25689932, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "square", "url": "../media/julie-film-square.mp4", "width": 1080, "height": 1080, "bytes": 22834535, "type": "mp4"}, {"key": "julie-film", "title": "Julie \u2014 full film, masterclass edit (2:20)", "format": "vertical", "url": "../media/julie-film-vertical.mp4", "width": 1080, "height": 1920, "bytes": 31981952, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "wide", "url": "../media/zoom-blue-wide.mp4", "width": 1920, "height": 1080, "bytes": 2367874, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "feed", "url": "../media/zoom-blue-feed.mp4", "width": 1080, "height": 1350, "bytes": 2241672, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "square", "url": "../media/zoom-blue-square.mp4", "width": 1080, "height": 1080, "bytes": 1877223, "type": "mp4"}, {"key": "zoom-blue", "title": "Zoom Blue \u2014 age 33% slower (15s)", "format": "vertical", "url": "../media/zoom-blue-vertical.mp4", "width": 1080, "height": 1920, "bytes": 3298455, "type": "mp4"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "wide", "url": "../media/zoom-static-wide.jpg", "width": 1920, "height": 1080, "bytes": 431559, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "feed", "url": "../media/zoom-static-feed.jpg", "width": 1080, "height": 1350, "bytes": 232711, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "square", "url": "../media/zoom-static-square.jpg", "width": 1080, "height": 1080, "bytes": 221792, "type": "jpg"}, {"key": "zoom-static", "title": "Julie on Zoom \u2014 class still", "format": "vertical", "url": "../media/zoom-static-vertical.jpg", "width": 1080, "height": 1920, "bytes": 256498, "type": "jpg"}];const $=id=>document.getElementById(id);let platform='facebook';let when='today';
 const guides={facebook:'<b>Facebook: the link goes in the post text and is clickable.</b> Paste the caption as is: the registration link sits in line 2, visible before "See more", and again at the end. Upload the video or image natively (do not paste the link alone, a native upload gets more reach). Facebook will not show a link card with a native video, which is why the URL is written in the text. Do not move the link to the comments.',
-instagram:'<b>Instagram: links in captions are not clickable, so the caption sends people to the bio link.</b> Before posting, set the profile bio link to the registration link (Copy registration link). Paste the caption as is: the first line, visible before "more", already carries the time and "link in bio". Five hashtags, within Instagram\'s cap. For a Reel, use the 1080 × 1920 file; for the feed, 1080 × 1350. Optional, same day: post a Story with the same asset and a Link sticker to the registration page.'};
+instagram:'<b>Instagram: links in captions are not clickable. The caption sends people to the bio link.</b><br>Step 1, before posting: <a href="https://www.instagram.com/accounts/edit/" target="_blank" rel="noopener">open Edit profile</a>, tap Links, Add external link, paste <b>https://www.longevitylifeacademy.com/julie-masterclass</b> (Copy registration link above), title <b>Reserve your masterclass seat</b>, Done.<br>Step 2: paste the caption as is. The first line, visible before "more", carries the time and "link in bio". Five hashtags, within Instagram\'s cap.<br>Step 3, same day: post a Story with the same asset and a Link sticker to the registration page.'};
 const sizenote={facebook:'Facebook feed: use 1080 × 1350 portrait (largest in the feed) or 1920 × 1080 landscape. Reels: 1080 × 1920.',instagram:'Instagram feed: use 1080 × 1350 portrait (largest in the feed) or 1080 × 1080 square. Reels and Stories: 1080 × 1920.'};
 const sizelabel={wide:'1920 × 1080 landscape',feed:'1080 × 1350 portrait',square:'1080 × 1080 square',vertical:'1080 × 1920 Reel / Story'};
 const order={facebook:['feed','wide','vertical','square'],instagram:['feed','square','vertical','wide']};
 async function copy(t,b){try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.append(a);a.select();document.execCommand('copy');a.remove()}const o=b.textContent;b.textContent='Copied';setTimeout(()=>b.textContent=o,1500)}
-function render(){const p=posts.find(x=>x.platform===platform);
-document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.p===platform));
+function render(){const p=posts.find(x=>x.platform===platform&&x.when===when);
+document.querySelectorAll('.tab[data-p]').forEach(t=>t.classList.toggle('on',t.dataset.p===platform));document.querySelectorAll('.tab[data-w]').forEach(t=>t.classList.toggle('on',t.dataset.w===when));
 $('title').textContent=(platform==='facebook'?'Facebook':'Instagram')+' · official Longevity Life Academy account';
 $('count').textContent=p.characters.toLocaleString()+' characters · limit '+p.limit.toLocaleString();
 $('caption').textContent=p.caption;$('registration').href=p.url;$('guide').innerHTML=guides[platform];$('sizenote').textContent=sizenote[platform];
@@ -58,8 +161,8 @@ d.append(m);
 const s=document.createElement('div');s.className='sizes';
 order[platform].forEach(f=>{const a=list.find(x=>x.format===f);if(!a)return;const l=document.createElement('a');l.className='download'+(f===order[platform][0]?'':' secondary');l.href=a.url;l.download=a.url.split('/').pop();l.textContent='Download '+sizelabel[f]+' · '+(a.bytes/1048576).toFixed(1)+' MB';s.append(l)});
 d.append(s);return d}))}
-document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{platform=t.dataset.p;render()});
-$('copy').onclick=e=>copy(posts.find(x=>x.platform===platform).caption,e.target);
+document.querySelectorAll('.tab[data-p]').forEach(t=>t.onclick=()=>{platform=t.dataset.p;render()});document.querySelectorAll('.tab[data-w]').forEach(t=>t.onclick=()=>{when=t.dataset.w;render()});
+$('copy').onclick=e=>copy(posts.find(x=>x.platform===platform&&x.when===when).caption,e.target);
 $('copylink').onclick=e=>copy(posts[0].url,e.target);
 render();
 </script></body></html>
