@@ -1,0 +1,122 @@
+[
+ {
+  "key": "julie-film",
+  "title": "Julie \u2014 full film, masterclass edit (2:20)",
+  "format": "wide",
+  "url": "../media/julie-film-wide.mp4",
+  "width": 1920,
+  "height": 1080,
+  "bytes": 46244840,
+  "type": "mp4"
+ },
+ {
+  "key": "julie-film",
+  "title": "Julie \u2014 full film, masterclass edit (2:20)",
+  "format": "feed",
+  "url": "../media/julie-film-feed.mp4",
+  "width": 1080,
+  "height": 1350,
+  "bytes": 25689932,
+  "type": "mp4"
+ },
+ {
+  "key": "julie-film",
+  "title": "Julie \u2014 full film, masterclass edit (2:20)",
+  "format": "square",
+  "url": "../media/julie-film-square.mp4",
+  "width": 1080,
+  "height": 1080,
+  "bytes": 22834535,
+  "type": "mp4"
+ },
+ {
+  "key": "julie-film",
+  "title": "Julie \u2014 full film, masterclass edit (2:20)",
+  "format": "vertical",
+  "url": "../media/julie-film-vertical.mp4",
+  "width": 1080,
+  "height": 1920,
+  "bytes": 31981952,
+  "type": "mp4"
+ },
+ {
+  "key": "zoom-blue",
+  "title": "Zoom Blue \u2014 age 33% slower (15s)",
+  "format": "wide",
+  "url": "../media/zoom-blue-wide.mp4",
+  "width": 1920,
+  "height": 1080,
+  "bytes": 2367874,
+  "type": "mp4"
+ },
+ {
+  "key": "zoom-blue",
+  "title": "Zoom Blue \u2014 age 33% slower (15s)",
+  "format": "feed",
+  "url": "../media/zoom-blue-feed.mp4",
+  "width": 1080,
+  "height": 1350,
+  "bytes": 2241672,
+  "type": "mp4"
+ },
+ {
+  "key": "zoom-blue",
+  "title": "Zoom Blue \u2014 age 33% slower (15s)",
+  "format": "square",
+  "url": "../media/zoom-blue-square.mp4",
+  "width": 1080,
+  "height": 1080,
+  "bytes": 1877223,
+  "type": "mp4"
+ },
+ {
+  "key": "zoom-blue",
+  "title": "Zoom Blue \u2014 age 33% slower (15s)",
+  "format": "vertical",
+  "url": "../media/zoom-blue-vertical.mp4",
+  "width": 1080,
+  "height": 1920,
+  "bytes": 3298455,
+  "type": "mp4"
+ },
+ {
+  "key": "zoom-static",
+  "title": "Julie on Zoom \u2014 class still",
+  "format": "wide",
+  "url": "../media/zoom-static-wide.jpg",
+  "width": 1920,
+  "height": 1080,
+  "bytes": 431559,
+  "type": "jpg"
+ },
+ {
+  "key": "zoom-static",
+  "title": "Julie on Zoom \u2014 class still",
+  "format": "feed",
+  "url": "../media/zoom-static-feed.jpg",
+  "width": 1080,
+  "height": 1350,
+  "bytes": 232711,
+  "type": "jpg"
+ },
+ {
+  "key": "zoom-static",
+  "title": "Julie on Zoom \u2014 class still",
+  "format": "square",
+  "url": "../media/zoom-static-square.jpg",
+  "width": 1080,
+  "height": 1080,
+  "bytes": 221792,
+  "type": "jpg"
+ },
+ {
+  "key": "zoom-static",
+  "title": "Julie on Zoom \u2014 class still",
+  "format": "vertical",
+  "url": "../media/zoom-static-vertical.jpg",
+  "width": 1080,
+  "height": 1920,
+  "bytes": 256498,
+  "type": "jpg"
+ }
+]
