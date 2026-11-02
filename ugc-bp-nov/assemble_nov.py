@@ -26,19 +26,16 @@ caps = [
 def esc(t):
     return t.replace("\\", "\\\\").replace("'", "’").replace(":", "\\:").replace("%", "\\%").replace("#", "\\#")
 
-def drawtext_chain(clip):
-    parts = []
-    for c, s, e, t, it in caps:
-        if c != clip: continue
-        font = IT if it else REG
-        col = '0xB3CDF5' if it else 'white'
-        parts.append(f"drawtext=fontfile={font}:text='{esc(t)}':fontcolor={col}:fontsize={FS}:x=(w-text_w)/2:y={CAP_Y}:shadowcolor=black@0.55:shadowx=2:shadowy=3:enable='between(t,{s},{e})'")
-    return ','.join(parts)
+import json
+META = [m for m in json.load(open(f'{W}/caps/caps.json')) if m['fmt'] == FMT]
+CAPIN = {}  # caption index -> ffmpeg input index
 
 # cutaways: (clip, start, length, file)
 cut = {2: [(0.10, 2.25, f'{W}/cgm_{FMT}.mp4')], 3: [(2.25, 2.29, f'{W}/zoom_{FMT}.mp4')]}
 
 inputs = [f'{W}/src/w3_{FMT}.mp4', f'{W}/gen/h1.mp4', f'{W}/gen/h2.mp4', f'{W}/gen/h3.mp4', f'{W}/end_{FMT}.mp4', f'{W}/music_loop.wav', f'{W}/cgm_{FMT}.mp4', f'{W}/zoom_{FMT}.mp4']
+for m in META:
+    CAPIN[m['i']] = len(inputs); inputs.append(f"{W}/caps/cap_{FMT}_{m['i']:02d}.png")
 fc = []
 fc.append(f"[0:v]trim=0:{CUT},setpts=PTS-STARTPTS,format=yuv420p[v0]")
 fc.append(f"[0:a]atrim=0:{CUT},asetpts=PTS-STARTPTS[a0]")
@@ -51,7 +48,13 @@ for i in (1, 2, 3):
             idx = 6 if i == 2 else 7
             fc.append(f"[{idx}:v]trim=0:{ln},setpts=PTS-STARTPTS+{st}/TB,scale=1080:{H},fps=24,format=yuv420p[c{i}]")
             chain += f"[p{i}];[p{i}][c{i}]overlay=eof_action=pass:enable='between(t,{st},{st+ln})'"
-    chain += f",{drawtext_chain(i)}[v{i}]"
+    n = 0
+    for m in META:
+        if m['clip'] != i: continue
+        idx = CAPIN[m['i']]
+        chain += f"[q{i}_{n}];[q{i}_{n}][{idx}:v]overlay=x=(W-w)/2:y={CAP_Y}:enable='between(t,{m['s']},{m['e']})'"
+        n += 1
+    chain += f"[v{i}]"
     fc.append(chain)
     fc.append(f"[{i}:a]atrim=0:{lens[i]},asetpts=PTS-STARTPTS,aformat=sample_rates=48000:channel_layouts=stereo,volume=-4.5dB[s{i}]")
 fc.append(f"[4:v]trim=0:3.0,setpts=PTS-STARTPTS,fps=24,format=yuv420p,fade=t=out:st=2.5:d=0.5[v4]")
@@ -65,7 +68,9 @@ fc.append(f"[5:a]atrim=0:{total},asetpts=PTS-STARTPTS,aformat=sample_rates=48000
 fc.append(f"[spk][mus]amix=inputs=2:duration=first:normalize=0[off]")
 fc.append(f"[a0][off]concat=n=2:v=0:a=1[a]")
 cmd = [FF, '-loglevel', 'error', '-y']
-for f in inputs: cmd += ['-i', f]
+for k, f in enumerate(inputs):
+    if f.endswith('.png'): cmd += ['-loop', '1']
+    cmd += ['-i', f]
 cmd += ['-filter_complex', ';'.join(fc), '-map', '[v]', '-map', '[a]', '-r', '24', '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', f'{W}/out/W3_Blueprint_Nov_{FMT}.mp4']
 r = subprocess.run(cmd, capture_output=True, text=True)
 print(r.returncode, r.stderr[-2000:])
