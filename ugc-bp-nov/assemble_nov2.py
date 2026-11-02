@@ -11,7 +11,9 @@ H = {'9x16': 1920, '1x1': 1080}[FMT]
 CAP_Y = {'9x16': 1290, '1x1': 780}[FMT]
 CROP = "crop=1080:1080:0:330," if FMT == '1x1' else ""
 META = [m for m in json.load(open(f'{W}/caps/caps.json')) if m['fmt'] == FMT]
-cut = {2: [(0.10, 2.25, f'{W}/cgm_{FMT}.mp4')], 3: [(2.25, 1.95, f'{W}/zoom_{FMT}.mp4')]}
+cut = {2: [(0.10, 1.9, f'{W}/cgm_{FMT}.mp4')], 3: [(0.10, 1.7, f'{W}/julie_{FMT}.mp4'), (1.80, 1.95, f'{W}/zoom_{FMT}.mp4')]}
+def hidden(i, m):
+    return any(m['s'] < st + ln and m['e'] > st for (st, ln, f) in cut.get(i, []))
 
 def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
@@ -30,7 +32,7 @@ for i in (1, 2, 3):
         fc.append(f"[{idx}:v]trim=0:{ln},setpts=PTS-STARTPTS+{st}/TB,scale=1080:{H},fps=24,format=yuv420p[k{n}]")
         fc.append(f"[{cur}][k{n}]overlay=eof_action=pass[b{n}]"); cur = f'b{n}'; n += 1
     for m in META:
-        if m['clip'] != i: continue
+        if m['clip'] != i or hidden(i, m): continue
         idx = inputs.count('-i')
         inputs += ['-loop', '1', '-t', f"{m['e']+0.05}", '-i', f"{W}/caps/cap_{FMT}_{m['i']:02d}.png"]
         fc.append(f"[{cur}][{idx}:v]overlay=x=(W-w)/2:y={CAP_Y}:eof_action=pass:enable='between(t,{m['s']},{m['e']})'[b{n}]"); cur = f'b{n}'; n += 1
