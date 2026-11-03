@@ -67,7 +67,7 @@ def act(a):
     m=a.mean(1); m=m[:len(m)//480*480]; e=np.sqrt((m.reshape(-1,480)**2).mean(1)); thr=np.percentile(e,60); return np.sqrt((e[e>=thr]**2).mean())
 ref=act(rd(BP,36.0,14.0)); speech=[]
 for i in (1,2,3):
-    v=rd(f'{S}/d{i}_{FMT}.mov',0,LENS[i]); g=float(np.clip(ref/act(v),0.35,1.4)); v*=g; f=int(0.03*SR); v[:f]*=np.linspace(0,1,f)[:,None]; v[-f:]*=np.linspace(1,0,f)[:,None]; speech.append(v)
+    v=rd(f'{S}/vo/l{i}.mp3',0,LENS[i]); g=float(np.clip(ref/act(v),0.35,1.4)); v*=g; f=int(0.03*SR); v[:f]*=np.linspace(0,1,f)[:,None]; v[-f:]*=np.linspace(1,0,f)[:,None]; speech.append(v)
 SP=sum(LENS.values()); voice=np.vstack(speech)
 gg=np.full(len(voice),0.0665,np.float32); r=int(0.5*SR); gg[:r]*=np.linspace(0,1,r); gg=np.convolve(gg,np.ones(4800)/4800,mode='same').astype(np.float32)
 sp_mix=np.clip(voice,-1,1)
