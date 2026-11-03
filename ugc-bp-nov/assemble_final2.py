@@ -36,7 +36,7 @@ def cut_src(name,a,b):
     if not os.path.exists(p): run(['ffmpeg','-loglevel','error','-y','-ss',str(a),'-to',str(b),'-i',BP,'-an','-r','24','-c:v','libx264','-crf','16','-pix_fmt','yuv420p',p])
     return p
 cgm=cut_src('cgm',58.5,60.4)
-OV={1:[],2:[(0.10,1.9,cgm),(8.1,3.2,f'{S}/zoomgrid_{FMT}.mp4')],3:[]}
+OV={1:[],2:[(0.10,1.9,cgm),(8.1,3.2,f'{S}/zoomfull_{FMT}.mp4')],3:[]}
 def hidden(i,m): return any(m['s']<st+ln+0.3 and m['e']>st-0.3 for st,ln,f in OV[i])
 for i in (1,2,3):
     L=LENS[i]; inputs=['-i',f'{S}/gen/h{i}a.mp4','-i',f'{S}/gen/h{i}b.mp4','-i',f'{S}/gen/h{i}c.mp4']
