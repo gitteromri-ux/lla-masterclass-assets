@@ -54,7 +54,7 @@ for i in (1,2,3):
         fc.append(f"[{cur}][{idx}:v]overlay=x=(W-w)/2:y={CAP_Y}:eof_action=pass:enable='between(t,{m['s']},{m['e']})'[b{n}]"); cur=f'b{n}'; n+=1
     run(['ffmpeg','-loglevel','error','-y']+inputs+['-filter_complex',';'.join(fc),'-map',f'[{cur}]','-map','[ao]','-r','24','-c:v','libx264','-preset','veryfast','-crf','16','-pix_fmt','yuv420p','-c:a','pcm_s16le',f'{S}/d{i}_{FMT}.mov'])
     print('clip',i,'ok',flush=True)
-EL=15.0
+EL=15.7
 # audio
 def rd(path,ss,dur):
     r=subprocess.run(['ffmpeg','-v','error','-ss',f'{ss:.4f}','-t',f'{dur:.4f}','-i',path,'-ac','2','-ar',str(SR),'-f','f32le','-'],capture_output=True).stdout
