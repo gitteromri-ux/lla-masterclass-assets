@@ -9,7 +9,7 @@ FJ=f'{FILM}/LLA_Julie_Film_75s_BP79_{FMT}.mp4'
 FREG=f'{REPO}/fonts/PlayfairDisplay-Regular.ttf'; FIT=f'{REPO}/fonts/PlayfairDisplay-Italic.ttf'
 WHITE=(250,248,245); BLUE=(158,190,235); RULE=(69,81,113)
 CROP="crop=1080:1080:0:330," if FMT=='1x1' else ""
-HOOK_END=21.8; BP_IN=22.65; BP_OUT=51.917; LENS={1:13.0,2:11.4,3:14.7}; SR=48000
+HOOK_END=21.8; BP_IN=22.65; BP_OUT=37.75; LENS={1:11.6,2:11.1,3:14.3}; SR=48000
 E_A,E_B,E_C,E_D=45.83,48.25,52.75,64.3   # film ending: laptop beat | (zoom+faculty -> replaced) | CGM..end card
 META=[m for m in json.load(open(f'{REPO}/caps/caps.json')) if m['fmt']==FMT]
 os.makedirs(f'{S}/out',exist_ok=True)
@@ -54,11 +54,13 @@ for i in (1,2,3):
         fc.append(f"[{cur}][{idx}:v]overlay=x=(W-w)/2:y={CAP_Y}:eof_action=pass:enable='between(t,{m['s']},{m['e']})'[b{n}]"); cur=f'b{n}'; n+=1
     run(['ffmpeg','-loglevel','error','-y']+inputs+['-filter_complex',';'.join(fc),'-map',f'[{cur}]','-map','[ao]','-r','24','-c:v','libx264','-preset','veryfast','-crf','16','-pix_fmt','yuv420p','-c:a','pcm_s16le',f'{S}/d{i}_{FMT}.mov'])
     print('clip',i,'ok',flush=True)
-# ending video: film laptop beat + zoom beat (4.5 s) + film CGM..end card
-run(['ffmpeg','-loglevel','error','-y','-i',FJ,'-i',f'{S}/zoombeat_{FMT}.mp4','-filter_complex',
-     f"[0:v]trim={E_A}:{E_B},setpts=PTS-STARTPTS,fps=24,format=yuv420p[a];[1:v]trim=0:4.5,setpts=PTS-STARTPTS,fps=24,format=yuv420p,tpad=stop_mode=clone:stop_duration=0.2[b];[0:v]trim={E_C}:{E_D},setpts=PTS-STARTPTS,fps=24,format=yuv420p[c];[a][b][c]concat=n=3:v=1:a=0[v]",
-     '-map','[v]','-frames:v',str(int(round((E_D-E_A)*24))),'-r','24','-c:v','libx264','-preset','veryfast','-crf','14','-pix_fmt','yuv420p',f'{S}/ending_{FMT}.mp4'])
-EL=E_D-E_A
+# ending video: zoom beat (4.5 s) + film CGM + price (trimmed) + reserve (trimmed) + end card
+SEGS=[(52.75,55.04),(55.04,57.6),(59.3,60.9),(61.04,64.3)]
+fc=["[1:v]trim=0:4.5,setpts=PTS-STARTPTS,fps=24,format=yuv420p,tpad=stop_mode=clone:stop_duration=0.2,trim=0:4.5[z]"]
+for k,(a0,b0) in enumerate(SEGS): fc.append(f"[0:v]trim={a0}:{b0},setpts=PTS-STARTPTS,fps=24,format=yuv420p[s{k}]")
+fc.append("[z]"+''.join(f'[s{k}]' for k in range(len(SEGS)))+f"concat=n={len(SEGS)+1}:v=1:a=0[v]")
+EL=4.5+sum(b0-a0 for a0,b0 in SEGS)
+run(['ffmpeg','-loglevel','error','-y','-i',FJ,'-i',f'{S}/zoombeat_{FMT}.mp4','-filter_complex',';'.join(fc),'-map','[v]','-frames:v',str(int(round(EL*24))),'-r','24','-c:v','libx264','-preset','veryfast','-crf','14','-pix_fmt','yuv420p',f'{S}/ending_{FMT}.mp4'])
 # audio
 def rd(path,ss,dur):
     r=subprocess.run(['ffmpeg','-v','error','-ss',f'{ss:.4f}','-t',f'{dur:.4f}','-i',path,'-ac','2','-ar',str(SR),'-f','f32le','-'],capture_output=True).stdout
@@ -71,7 +73,13 @@ for i in (1,2,3):
 SP=sum(LENS.values()); voice=np.vstack(speech)
 gg=np.full(len(voice),0.0665,np.float32); r=int(0.5*SR); gg[:r]*=np.linspace(0,1,r); gg=np.convolve(gg,np.ones(4800)/4800,mode='same').astype(np.float32)
 sp_mix=np.clip(voice,-1,1)
-endA=rd(FJ,E_A,EL); fi=int(0.6*SR); endA[:fi]*=np.linspace(0,1,fi)[:,None]
+pieces=[rd(FJ,48.25,4.5+2.29+2.56),rd(FJ,59.3,1.6),rd(FJ,61.04,3.26)]
+xq=int(0.25*SR); rq=np.linspace(0,1,xq)[:,None]
+endA=pieces[0]
+for pc in pieces[1:]:
+    endA[-xq:]=endA[-xq:]*(1-rq)+pc[:xq]*rq; endA=np.vstack([endA,pc[xq:]])
+N=int(round(EL*SR)); endA=np.vstack([endA,np.zeros((max(0,N-len(endA)),2),np.float32)])[:N]
+fi=int(0.6*SR); endA[:fi]*=np.linspace(0,1,fi)[:,None]
 xf=int(0.35*SR); ramp=np.linspace(0,1,xf)[:,None]
 sp_mix[-xf:]=sp_mix[-xf:]*(1-ramp)+endA[:xf]*ramp
 offer=np.vstack([sp_mix,endA[xf:]])
