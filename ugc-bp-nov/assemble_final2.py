@@ -70,8 +70,8 @@ for i in (1,2,3):
     v=rd(f'{S}/d{i}_{FMT}.mov',0,LENS[i]); g=float(np.clip(ref/act(v),0.35,1.4)); v*=g; f=int(0.03*SR); v[:f]*=np.linspace(0,1,f)[:,None]; v[-f:]*=np.linspace(1,0,f)[:,None]; speech.append(v)
 SP=sum(LENS.values()); voice=np.vstack(speech)
 gg=np.full(len(voice),0.0665,np.float32); r=int(0.5*SR); gg[:r]*=np.linspace(0,1,r); gg=np.convolve(gg,np.ones(4800)/4800,mode='same').astype(np.float32)
-music=rd(EX,61.0,SP)*gg[:,None]; sp_mix=np.clip(voice+music,-1,1)
-endA=rd(FJ,E_A,EL)
+sp_mix=np.clip(voice,-1,1)
+endA=rd(FJ,E_A,EL); fi=int(0.6*SR); endA[:fi]*=np.linspace(0,1,fi)[:,None]
 xf=int(0.35*SR); ramp=np.linspace(0,1,xf)[:,None]
 sp_mix[-xf:]=sp_mix[-xf:]*(1-ramp)+endA[:xf]*ramp
 offer=np.vstack([sp_mix,endA[xf:]])
