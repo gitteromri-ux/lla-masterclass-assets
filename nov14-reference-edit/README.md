@@ -4,11 +4,11 @@
 
 [Open or download the November 14 launch cut](https://raw.githubusercontent.com/gitteromri-ux/lla-masterclass-assets/main/nov14-reference-edit/Julie-Masterclass-Nov14-Launch-Final.mp4)
 
-1920 × 1080, 30 fps, H.264/AAC, 87.5 seconds. This is the latest revision of the new cut from the 136.63-second masterclass film.
+1920 × 1080, 30 fps, H.264/AAC, 85.2 seconds. This is the latest revision of the new cut from the 136.63-second masterclass film.
 
 The launch revision addresses the five timestamped corrections: AUTOMATIC card coverage over the AirPod continuity shots, a hard cut between Cards 1 and 2, a fixed matching logo on Cards 2–5, closing voiceover moved two seconds earlier, a shortened/reverberant music tail, and complete press dates relocated above the Yahoo overlap.
 
-The video retains the opening through 01:02.800 and adds reference-led ending cards. The original later slow-aging card and outdated event cards are omitted. The new cards show Nov 14th at 12 PM ET, VIP duration wording, and an enrollment finish.
+The video retains the opening through 01:02.800 and adds reference-led ending cards. The original later slow-aging card and outdated event cards are omitted. The new cards show Nov 14th at 12 PM ET, VIP duration wording, and no Enroll card (removed, not approved).
 
 **Latest correction:** the looped soundtrack has been replaced. A short original instrumental lead joins the original closing narration and score from 01:53.500, without repeated musical sections or tempo changes. The ending fades from 01:26.800 to 01:27.500. The VIP card now reads “90 minutes live / Masterclass + live Q&A” to present the duration as the whole VIP experience.
 
@@ -39,6 +39,6 @@ These files are retained for handoff completeness, not recommended for publicati
 
 Extract the current editable ZIP, install Python with Pillow and NumPy, and install FFmpeg. Run `bash urgent-render.sh` from the extracted folder. The bundled source directory provides the film, fonts, and image assets.
 
-The latest edit is 87.5 seconds at 1920×1080 and 30 fps. The current editable archive includes `urgent-render.sh` for the launch revision, the corrected press image, original AUTOMATIC card, fixed-logo artwork and supporting source files. The earlier 90-second MP4 and `render.sh` are retained as prior versions.
+The latest edit is 85.2 seconds at 1920×1080 and 30 fps. The current editable archive includes `urgent-render.sh` for the launch revision, the corrected press image, original AUTOMATIC card, fixed-logo artwork and supporting source files. The earlier 90-second MP4 and `render.sh` are retained as prior versions.
 
 These checks do not constitute user approval. GitHub publication was requested for download and handoff; no Facebook post, ad, or production website was changed.
