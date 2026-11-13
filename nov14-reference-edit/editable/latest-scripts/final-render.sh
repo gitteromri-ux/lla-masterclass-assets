@@ -3,6 +3,8 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 python build.py
+python auto-anim.py
+ffmpeg -v error -y -loop 1 -framerate 30 -t 0.7167 -i card-blank.png -framerate 30 -i auto-frames/f%03d.png -loop 1 -framerate 30 -t 2.8 -i card-automatic.png -filter_complex "[0][1][2]concat=n=3:v=1:a=0,trim=0:5.05,format=yuv420p" -c:v libx264 -crf 12 -preset veryfast -r 30 auto-clip.mp4
 ffmpeg -v error -y \
  -i source/masterclass-source.mp4 \
  -i scene-1.mp4 \
@@ -13,12 +15,10 @@ ffmpeg -v error -y \
  -loop 1 -framerate 30 -i hold-335.png \
  -loop 1 -framerate 30 -i hold-335y.png \
  -loop 1 -framerate 30 -i hold-100.png \
- -loop 1 -framerate 30 -i card-auto-a.png \
- -loop 1 -framerate 30 -i card-auto-b.png \
+ -i auto-clip.mp4 \
  -filter_complex_threads 2 -filter_complex \
-"[5:v]split=2[bk1][bk2];\
-[bk1]trim=0:0.867,setpts=PTS-STARTPTS,format=yuv420p,setsar=1[ab];[9:v]trim=0:1.2,setpts=PTS-STARTPTS,format=yuv420p,setsar=1[aa];[10:v]trim=0:3.483,setpts=PTS-STARTPTS,format=yuv420p,setsar=1[abb];\
-[ab][aa]xfade=transition=fade:duration=0.15:offset=0.717[a1];[a1][abb]xfade=transition=fade:duration=0.3:offset=1.567,setpts=PTS-STARTPTS+53.683333/TB[auto];\
+"[5:v]copy[bk2];\
+[9:v]setpts=PTS-STARTPTS+53.683333/TB,setsar=1[auto];\
 [4:v]format=yuva420p,fade=t=out:st=13.033:d=0.35:alpha=1[pf];\
 [0:v]trim=0:62.8,setpts=PTS-STARTPTS[vb];[vb][pf]overlay=enable='between(t,9.666667,13.4)'[vp1];[vp1][6:v]overlay=enable='between(t,18.15,19.12)'[vp2];[vp2][7:v]overlay=enable='between(t,40.15,41.12)'[vp3];[vp3][8:v]overlay=enable='between(t,45.75,46.52)'[vp];\
 [vp][auto]overlay=eof_action=pass:enable='between(t,53.683333,58.733333)',trim=0:62.8,setsar=1[v0];\
