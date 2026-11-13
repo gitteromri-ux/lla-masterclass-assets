@@ -8,7 +8,7 @@
 
 The video retains the opening through 01:02.800 and adds reference-led ending cards. The original later slow-aging card and outdated event cards are omitted. The new cards show Nov 14th at 12 PM ET, VIP duration wording, and an enrollment finish.
 
-**Music limitation:** the soundtrack uses crossfaded repeated instrumental sections from the original film, followed by its closing tail and a fade. It is not a continuous single-pass retiming. Review the musical repetition before publication.
+**Latest correction:** the looped soundtrack has been replaced. A short original instrumental lead joins the original closing narration and score from 01:53.500, without repeated musical sections or tempo changes. The ending fades over its final 1.2 seconds. The VIP card now reads “90 minutes live / Masterclass + live Q&A” to present the duration as the whole VIP experience.
 
 ## Editable projects
 
@@ -37,8 +37,6 @@ These files are retained for handoff completeness, not recommended for publicati
 
 Extract the current editable ZIP, install Python with Pillow and NumPy, and install FFmpeg. Run `bash render.sh` from the extracted folder. The bundled source directory provides the film, fonts, and image assets.
 
-The current MP4 was fully decoded without reported FFmpeg errors. Both video and audio streams measure 90.000 seconds. Text bounds and rendered 390-pixel-wide proofs were checked for cropping. The public MP4 was downloaded without authentication and its SHA-256 matched the delivered local file:
-
-`bae240992790a19558b24fff84af2dc95896582cf05430e0499f797754b4c614`
+The edit is 90 seconds at 1920×1080 and 30 fps. Text bounds and rendered 390-pixel-wide proofs were checked for cropping. The current project archive contains the revised audio assembly and VIP card.
 
 These checks do not constitute user approval. GitHub publication was requested for download and handoff; no Facebook post, ad, or production website was changed.
