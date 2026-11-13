@@ -114,3 +114,9 @@ for i in range(5):
     phone.paste(Image.open(P/f'card-{i+1}.png').resize((390,219),Image.Resampling.LANCZOS),(0,219*i))
 phone.save(P/'phone-proof.jpg',quality=95)
 print('Five 1080p cards rendered; all text bounds validated.')
+
+# AUTOMATIC card, matching the approved two-line serif/italic layout; plus logo-only blank for clean text transitions.
+im=base();logo(im,460,70);im.convert('RGB').save(P/'card-blank.png')
+im=base();logo(im,460,70);txt(im,'Automatic.',392,156);im.convert('RGB').save(P/'card-auto-a.png')
+txt(im,'Like brushing your teeth.',578,124,BLUE,True);rule(im,768,720);im.convert('RGB').save(P/'card-auto-b.png')
+im.convert('RGB').resize((960,540),Image.Resampling.LANCZOS).save(P/'card-auto.jpg',quality=95)
