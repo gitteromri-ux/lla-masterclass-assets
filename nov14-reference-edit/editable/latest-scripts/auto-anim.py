@@ -7,12 +7,12 @@ src=Path('build.py').read_text().split('# Reference-led typography')[0]
 exec(src,b.__dict__)
 W,H=1920,1080
 layer=Image.new('RGBA',(W,H),(0,0,0,0))
-b.txt(layer,'Make longevity',407,128)
-b.txt(layer,'automatic.',567,128,b.BLUE,True)
+b.txt(layer,'Make longevity',382,164)
+b.txt(layer,'automatic.',584,164,b.BLUE,True)
 from PIL import ImageDraw
 d=ImageDraw.Draw(layer)
-for x in range(960-375,960+375):
-    d.line((x,764,x,765),fill=(196,178,146,round(170*min(1,(375-abs(x-960))/60))))
+for x in range(960-420,960+420):
+    d.line((x,812,x,813),fill=(196,178,146,round(170*min(1,(420-abs(x-960))/60))))
 base=Image.open('card-blank.png').convert('RGBA')
 out=Path('auto-frames');out.mkdir(exist_ok=True)
 N=45
